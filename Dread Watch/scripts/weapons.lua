@@ -270,7 +270,7 @@ function DW_Telepunch:GetSkillEffect(p1, p2)
 end	
 
 DW_Telepunch_A = DW_Telepunch:new{
-	UpgradeDescription = "Can project punches past enemies.",
+	UpgradeDescription = "Can project punches past multiple obstacles.",
 	TipImage = {
 		Unit = Point(2,4),
 		Enemy1 = Point(2,3),
