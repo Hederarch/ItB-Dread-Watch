@@ -22,11 +22,51 @@ Personality.Artificial.DW_MISSIONSTART = {
 	"There's Zio in the area. Get to it.",
 	"Time to wreck 'em.",
 	"Landing checks are good. Go for drop.",
+	"TRI-G coming in hot.",
+	"TRI-G assets are on site.",
+	"Hit them where it hurts.",
+	"TRI-G hangar is overhead, ready to drop.",
+	"Hangarspace is overhead, ready to drop.",
 }
 
 modapiext.dialog:addRuledDialog("DW_MISSIONSTART", {
     Odds = 100,
     { main = "DW_MISSIONSTART" }
+})
+
+Personality.Artificial.DW_MISSIONSTART_DELTA = {
+	"Revealing additional drones nearby.",
+	"Requesting some backup. It'll be here shortly.",
+	"Got a request for a drone on the way.",
+	"Sending you one of our Manta models. Take care of it.",
+	"Diverting a Manta from nearby. Take care of it.",
+	"Requesting a Manta for the LZ. Take care of it.",
+	"Additional drone on the scene.",
+	"We can uncloak one of them, yeah. Drone incoming.",
+	"Got your signal. It's on the way, yeah.",
+	"Good work out there, Delta. We're rooting for you.",
+	"Scout cluster Delta-Five is flying in.",
+	"Scout cluster Delta-Eight is flying in.",
+	"Scout cluster Delta-Twelve is flying in.",
+	"Scout cluster Delta-Three is flying in.",
+	"Backup will be here shortly.",
+	"Keep it up out there.",
+	"Ready to land. Let's do this!",
+	"Good work, everybody!",
+	"I love you guys.",
+	"Assets coming in.",
+	"TRI-G, you've got some backup on the way.",
+	"Flight course is set. We're good for drop.",
+	"Got an asset coming in. Keep it safe, yeah?",
+	"Got a flight plan approved by local Swarm Leader.",
+	"The Swarm Leader is sending you some help from its scouts.",
+	"A friend is approaching.",
+	"Pulling in some help for you now.",
+}
+
+modapiext.dialog:addRuledDialog("DW_MISSIONSTART_DELTA", {
+    Odds = 100,
+    { main = "DW_MISSIONSTART_DELTA" }
 })
 
 Personality.Artificial.DW_MISSIONSTART_CEO = {
@@ -144,4 +184,29 @@ Personality.Artificial.DW_LOOT_CEO = {
 modapiext.dialog:addRuledDialog("DW_LOOT_CEO", {
     Odds = 100,
     { main = "DW_LOOT_CEO" }
+})
+
+Personality.Artificial.DW_DRONE_DIES = {
+	"Aww.",
+	"Oh.",
+	"Ouch.",
+	"That's not recoverable.",
+	"Asset down.",
+	"Lost a drone feed.",
+	"Drone cam is down. What happened?",
+	"Drone's gone.",
+	"I told you to take care of it.",
+	"Oh, not like that!",
+	"Aww, I liked that one.",
+	"Reporting back to the scout swarm.",
+	"Swarm Leader, you're not getting that back after all.",
+	"TRI-G to Swarm Leader, we owe you one.",
+	"These things are so flimsy.",
+	"These things are so fragile!",
+	"That's delicate equipment! Careful!",
+}
+
+modapiext.dialog:addRuledDialog("DW_DRONE_DIES", {
+    Odds = 50,
+    { main = "DW_DRONE_DIES" }
 })

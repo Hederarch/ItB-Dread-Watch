@@ -42,12 +42,12 @@ modApi:appendAsset("img/weapons/passives/passive_dreadwatch.png", path .."img/we
 	end
 
 	DW_Wiretaps_A = DW_Wiretaps:new{
-		UpgradeDescription = "When gaining any Grid from failed objectives, gain 1 more.",
+		UpgradeDescription = "Gain 2 grid when destroying the CEO tower.",
 		Passive = "DW_Wiretaps_A"
 	}
 	
 	DW_Wiretaps_B = DW_Wiretaps:new{
-		UpgradeDescription = "Gain 2 grid when destroying the CEO tower.",
+		UpgradeDescription = "When gaining any Grid from failed objectives, gain 1 more.",
 		Passive = "DW_Wiretaps_B"
 	}
 	
@@ -295,7 +295,28 @@ local function EVENT_OnBuildingHurt(point, damage)
 		end
 	end
 end
+-------------------------------------[ Hex Pilots Compatibility ]-----------------------------
+local function GetDelta()
+	if Board == nil then
+		return false
+	end
+	for i = 0, 2 do
+		local mech = Board:GetPawn(i)
+		if mech then
+			if mech:IsAbility("MantaSupport") then
+				return true
+			end
+		end
+	end
+	return false
+end
 
+local function PawnKilled(mission, pawn)
+	if pawn:GetType() == "Deploy_Manta" then
+		addProxyDialog("DW_DRONE_DIES")
+	end
+end
+-----------------------------------------------------------------------------------------------
 local missionStart = function(mission)
 	if mission == nil then return end 
 	if GAME == nil then return end
@@ -313,11 +334,15 @@ local missionStart = function(mission)
 			addProxyDialog("DW_MISSIONSTART_FINAL")
 		elseif mission.BossMission then
 			addProxyDialog("DW_MISSIONSTART_CEO")
+		elseif GetDelta() then
+			addProxyDialog("DW_MISSIONSTART_DELTA")
 		else
 			addProxyDialog("DW_MISSIONSTART")
 		end
 	end
 end
+
+
 
 local function nextTurn(mission)
 	if mission ~= nil and mission.dw_building_loot ~= nil then
@@ -329,11 +354,14 @@ local function nextTurn(mission)
 	end
 end
 
+
+
 local function EVENT_OnModsLoaded()
 	modApi:addMissionStartHook(missionStart)
 	modApi:addMissionEndHook(missionEnd)
 	modApi:addNextTurnHook(nextTurn)
 	modApi:addPreIslandSelectionHook(nextIsland)
+	modapiext:addPawnKilledHook(PawnKilled)
 end
 
 boardEvents.onBuildingDamaged:subscribe(EVENT_OnBuildingHurt)

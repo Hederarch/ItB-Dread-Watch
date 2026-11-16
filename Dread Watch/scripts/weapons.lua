@@ -42,7 +42,7 @@ DW_TC_Repeater = TankDefault:new{
 	Repeat = false,
 	Split = false,
 	Upgrades = 2,
-	UpgradeList = { "Flak Catcher",  "Ally Immune"  },
+	UpgradeList = { "Flak Catcher" ,"Ally Immune" },
 	UpgradeCost = {2, 2},
 	TipImage = {
 		Unit = Point(1,3),
@@ -158,7 +158,7 @@ function DW_TC_Repeater:GetFinalEffect(p1, p2, p3)
 	end 
 	ret:AddDamage(damage)
 	
-	if self.Repeat and second_tar == p1 then
+	if self.Repeat and second_tar == p1 and not (Board:GetPawn(p1):IsShield() or Board:GetPawn(p1):IsArmor()) then
 		ret:AddScript(string.format("local target = Point(%d,%d) local pawn = Board:GetPawn(target) Board:Ping(target,GL_Color(75, 250, 75, 0.75)) pawn:SetActive(true) pawn:SetMovementSpent(true)", p1.x, p1.y))
 		ret:AddBurst(p1,"Weapon_Load_Up",DIR_NONE)
 	end
@@ -167,7 +167,7 @@ function DW_TC_Repeater:GetFinalEffect(p1, p2, p3)
 end
 
 DW_TC_Repeater_A = DW_TC_Repeater:new{
-	UpgradeDescription = "When shooting yourself, shoot again.",
+	UpgradeDescription = "When shooting yourself, shoot again. Won't work if Armored or Shielded.",
 	Repeat = true,
 	TipImage = {
 		Unit = Point(2,1),

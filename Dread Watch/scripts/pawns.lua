@@ -114,7 +114,7 @@ end
 
 a[mech3 .. "_mech"] =			a.MechUnit:new{Image = "units/player/" .. mech3 .. "_mech.png", PosX = -30, PosY = -12}
 a[mech3 .. "_mecha"] =			a.MechUnit:new{Image = "units/player/" .. mech3 .. "_mech_a.png", PosX = -27, PosY = -12, NumFrames = 4 }
-a[mech3 .. "_mechw"] =			a.MechUnit:new{Image = "units/player/" .. mech3 .. "_mech_w.png", PosX = -25, PosY = 2 }
+a[mech3 .. "_mechw"] =			a.MechUnit:new{Image = "units/player/" .. mech3 .. "_mech_w.png", PosX = -25, PosY = -4 }
 a[mech3 .. "_mech_broken"] =	a.MechUnit:new{Image = "units/player/" .. mech3 .. "_mech_broken.png", PosX = -27, PosY = -12 }
-a[mech3 .. "_mechw_broken"] =	a.MechUnit:new{Image = "units/player/" .. mech3 .. "_mech_w_broken.png", PosX = -25, PosY = 2 }
+a[mech3 .. "_mechw_broken"] =	a.MechUnit:new{Image = "units/player/" .. mech3 .. "_mech_w_broken.png", PosX = -25, PosY = -4 }
 a[mech3 .. "_mech_ns"] =		a.MechIcon:new{Image = "units/player/" .. mech3 .. "_mech_ns.png"}

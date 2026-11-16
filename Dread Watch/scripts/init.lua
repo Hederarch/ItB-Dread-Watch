@@ -4,7 +4,7 @@
 local mod = {
 	id = "hedera_dread_watch", --replace this, make it unique! it's only internal so it doesn't really matter.
 	name = "The Dread Watch", -- this name is what shows up in the mod list 
-	version = "1.0.0", 
+	version = "1.0.1", 
 	dependencies = {
         modApiExt = "1.24",
 		memedit = "1.2.2",
