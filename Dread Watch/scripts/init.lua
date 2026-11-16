@@ -23,9 +23,9 @@ function mod:init() -- these are the files that the modloader will load
 	require(self.scriptPath .."passive")
 end
 	-- this adds your weapons to the weapon deck so other squads can use them
-    --modApi:addWeaponDrop("TT_BigBlaster")
-    --modApi:addWeaponDrop("TT_GroupLoader")
-    --modApi:addWeaponDrop("TT_SiloDrop")
+    modApi:addWeaponDrop("DW_Telepunch")
+    modApi:addWeaponDrop("DW_Rockets")
+    modApi:addWeaponDrop("DW_TC_Repeater")
 
 function mod:metadata()
 	modApi:addGenerationOption(
