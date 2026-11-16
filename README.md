@@ -67,3 +67,11 @@ This squad also features 5 achievements challenging you to take more from the is
 <img width="64" height="64" alt="dreadwatch_mastery" src="https://github.com/user-attachments/assets/4233b57d-3835-4e09-b39e-4ec3931e143b" />
 
 *Thanks for playing!*
+
+## Changelog
+**1.0.1**
+- Added bonus dialog for Delta from Hex Pilots
+- Fixed offset issues on Sledge Mech
+- Flak Catcher now prevents (most) interactions that let Crasher Charge shoot infinitely
+- Wire Taps' upgrades now describe the correct effects, they were swapped
+- Added weapons to weapon deck correctly
